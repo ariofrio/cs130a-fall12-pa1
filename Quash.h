@@ -39,11 +39,11 @@ private:
   void pop_heap();
 
   // Hash table of (element, heap_index)
-  // Empty or deleted slots have heap_index == -1
+  // Empty slots have heap_index == -1
+  // Deleted slots have heap_index == -2
   vector<pair<int, int> > hash_table;
   bool contains_hash_table(int) const;
   int push_hash_table(int);
-  void pop_hash_table();
 
   int hash(int) const;
 };
