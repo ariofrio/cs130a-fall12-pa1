@@ -47,11 +47,17 @@ void Quash::print_heap() const {
 }
 
 void Quash::print_hash_table() const {
-  if(hash_table[0].second != -1)
+  bool did_print_a_number = false;
+  if(hash_table[0].second != -1) {
     cout << hash_table[0].first;
+    did_print_a_number = true;
+  }
   for(int i=1; i < hash_table.size(); i++) {
-    if(hash_table[i].second != -1)
-      cout << " " << hash_table[i].first;
+    if(hash_table[i].second != -1) {
+      if(did_print_a_number) cout << " ";
+      cout << hash_table[i].first;
+      did_print_a_number = true;
+    }
   }
   cout << endl;
 }

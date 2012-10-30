@@ -7,6 +7,7 @@ using namespace std;
 bool VERBOSE = false;
 void print_message(string);
 void print_message(string, int, string);
+void print_message(string, int, string, bool);
 
 int main(int argc, char**argv) {
   if(argc > 1) {
@@ -46,7 +47,7 @@ int main(int argc, char**argv) {
         } else {
           int i = quash.top();
           quash.pop();
-          print_message("max item", i, "deleted");
+          print_message("max item", i, "deleted", true);
         }
         
     } else if(cmd.compare("delete") == 0) {
@@ -70,7 +71,11 @@ void print_message(string a) {
 }
 
 void print_message(string a, int b, string c) {
-  if(VERBOSE) {
+  print_message(a, b, c, false);
+}
+
+void print_message(string a, int b, string c, bool force) {
+  if(VERBOSE or force) {
     cout << a << " " << b << " " << c << endl;
   } else {
     cout << a << " " << c << endl;

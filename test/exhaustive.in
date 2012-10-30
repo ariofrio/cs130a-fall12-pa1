@@ -14,6 +14,7 @@ delete 100
 print
 
 insert 1
+print
 lookup 1
 deleteMax
 lookup 1
