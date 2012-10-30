@@ -1,8 +1,8 @@
 <h1>
   Quash Programming Assignment 
-  <a href="http://travis-ci.org/ariofrio/oration">
+  <a href="http://travis-ci.org/ariofrio/cs130a-fall12-pa1">
     <img alt="Travis CI status" 
-      src="https://secure.travis-ci.org/ariofrio/oration.png">
+      src="https://secure.travis-ci.org/ariofrio/cs130a-fall12-pa1.png">
   </a>
 </h1>
 
