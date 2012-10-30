@@ -5,11 +5,11 @@ SRC=\
      Quash.o \
      quash.o
 
-all: quash
+all: prog1
 
 .PHONY: all clean
 
-quash: $(SRC)
+prog1: $(SRC)
 	$(CXX) $(LDFLAGS) $^ -o $@
 
 test: all
@@ -17,5 +17,5 @@ test: all
 
 clean:
 	rm -f *.o 
-	rm -f quash
+	rm -f prog1
 
