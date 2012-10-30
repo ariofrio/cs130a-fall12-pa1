@@ -33,6 +33,8 @@ public:
   void print_hash_table() const;
 
 private:
+  void print_item(int, pair<int, int>) const;
+
   // Heap of (element, hash_table_index)
   vector<pair<int, int> > heap;
   void percolate_down(int);

@@ -3,6 +3,8 @@
 
 using namespace std;
 
+extern bool VERBOSE;
+
 bool Quash::empty() const {
   return heap.empty();
 }
@@ -50,29 +52,31 @@ bool Quash::erase(int value) {
 }
 
 void Quash::print_heap() const {
-  if(!heap.empty()) {
-    cout << heap[0].first;
-    for(int i=1; i < heap.size(); i++) {
-      cout << " " << heap[i].first;
-    }
+  for(int i=0; i < heap.size(); i++) {
+    if(i > 0) cout << " ";
+    print_item(i, heap[i]);
   }
   cout << endl;
 }
 
 void Quash::print_hash_table() const {
-  bool did_print_a_number = false;
-  if(hash_table[0].second >= 0) {
-    cout << hash_table[0].first;
-    did_print_a_number = true;
-  }
-  for(int i=1; i < hash_table.size(); i++) {
-    if(hash_table[i].second >= 0) {
-      if(did_print_a_number) cout << " ";
-      cout << hash_table[i].first;
-      did_print_a_number = true;
+  bool space_pending = false;
+  for(int i=0; i < hash_table.size(); i++) {
+    if(hash_table[i].second >= 0 or VERBOSE) {
+      if(space_pending) cout << " ";
+      print_item(i, hash_table[i]);
+      space_pending = true;
     }
   }
   cout << endl;
+}
+
+void Quash::print_item(int i, pair<int, int> item) const {
+  if(VERBOSE) {
+    cout << i << ":" << item.first << ":" << item.second;
+  } else {
+    cout << item.first;
+  }
 }
 
 // PRIVATE
