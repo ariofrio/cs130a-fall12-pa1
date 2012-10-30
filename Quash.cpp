@@ -105,7 +105,7 @@ void Quash::percolate_down(int i) {
 int Quash::push_heap(int value) {
   heap.push_back(make_pair(value, -1));
   int i;
-  for(i = heap.size()-1; heap[i].first < heap[(i-1)/2].first; i = (i-1)/2) {
+  for(i = heap.size()-1; heap[i].first > heap[(i-1)/2].first; i = (i-1)/2) {
     swap(heap[i], heap[(i-1)/2]);
     if(heap[i].second != -1)
       hash_table[heap[i].second].second = (i-1)/2;

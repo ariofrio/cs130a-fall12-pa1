@@ -15,12 +15,16 @@ print
 
 insert 1
 print
+
 lookup 1
 deleteMax
 print
+
 lookup 1
 insert 1
 print
+
 lookup 1
 delete 1
 print
+
