@@ -12,9 +12,10 @@ bool Quash::contains(int value) const {
   return contains_hash_table(value);
 }
 
-// Return the largest value in the quash.
+/* Return the largest value in the quash. Undefined behaviour if
+ * called when the quash is empty. */
 int Quash::top() const {
-  return -1;
+  return heap.front().first;
 }
 
 // Insert an element into the quash. Does nothing if the element was already
