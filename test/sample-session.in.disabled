@@ -1,0 +1,13 @@
+insert 10
+insert -50
+insert 76
+lookup 12
+insert 12
+lookup 12
+print
+deleteMax
+delete 76
+print
+insert 12
+deleteMax
+lookup 76

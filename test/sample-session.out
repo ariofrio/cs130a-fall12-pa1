@@ -1,0 +1,15 @@
+item successfully inserted
+item successfully inserted
+item successfully inserted
+item not found
+item successfully inserted
+item found
+10 12 76 -50
+76 12 10 -50
+max item 76 deleted
+item not present in the table
+10 12 -50
+12 -50 10
+item already present
+max item 12 deleted
+item not found

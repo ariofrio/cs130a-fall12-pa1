@@ -1,0 +1,22 @@
+print
+
+lookup 0
+lookup 1
+lookup -1
+lookup -100
+lookup 100
+deleteMax
+delete 0
+delete 1
+delete -1
+delete -100
+delete 100
+print
+
+insert 1
+lookup 1
+deleteMax
+lookup 1
+insert 1
+lookup 1
+delete 1
