@@ -1,0 +1,28 @@
+item successfully inserted
+item successfully inserted
+12 56
+56 12
+item successfully inserted
+item successfully inserted
+item successfully inserted
+item successfully inserted
+item successfully inserted
+0 1 12 56 -50 899 -1
+899 12 56 -50 0 -1 1
+item found
+item found
+max item 899 deleted
+0 1 12 56 -50 -1
+56 12 1 -50 0 -1
+max item 56 deleted
+0 1 12 -50 -1
+12 -1 1 -50 0
+item not found
+item found
+item successfully deleted
+0 1 -50 -1
+1 -1 0 -50
+item not found
+max item 1 deleted
+0 -50 -1
+0 -1 -50
