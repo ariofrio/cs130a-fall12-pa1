@@ -6,5 +6,5 @@ for i in $TESTDIR/*.in; do
   echo -n $(tput bold)
   printf "%-37s   %s\n" $o "./quash < $i"
   echo -n $(tput sgr0)
-  ./quash < $i | diff -yW80 $o -
+  ./quash < $i | sdiff -w80 $o -
 done
