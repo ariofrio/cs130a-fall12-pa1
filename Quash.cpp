@@ -34,26 +34,19 @@ void Quash::pop() {
 
   heap.front() = heap.back();
   heap.pop_back();
-  int i = 0;
-  while(true) {
-    int left = 2*i;
-    int right = 2*i + 1;
-    int largest = i;
-    if(left <= heap.size() and heap[left] > heap[largest]) largest = left;
-    if(right <= heap.size() and heap[right] > heap[largest]) largest = right;
-    if(largest != i) {
-      swap(heap[i], heap[largest]);
-      hash_table[heap[i].second].second = largest;
-      hash_table[heap[largest].second].second = i;
-    } else {
-      return;
-    }
-  }
-  
+  percolate_down(0);
 }
 
 bool Quash::erase(int value) {
-  return false;
+  int hash_index = find_hash_table(value);
+  if(hash_index == -1) return false;
+
+  int heap_index = hash_table[hash_index].second;
+  heap[heap_index] = heap.back();
+  heap.pop_back();
+  percolate_down(heap_index);
+
+  hash_table[hash_index].second = -2;
 }
 
 void Quash::print_heap() const {
@@ -84,6 +77,25 @@ void Quash::print_hash_table() const {
 
 // PRIVATE
 
+/* Swap heap[i] with the larger of its children until it satisfies the heap
+ * property in its new position. */
+void Quash::percolate_down(int i) {
+  while(true) {
+    int left = 2*i + 1;
+    int right = 2*i + 2;
+    int largest = i;
+    if(left <= heap.size() and heap[left] > heap[largest]) largest = left;
+    if(right <= heap.size() and heap[right] > heap[largest]) largest = right;
+    if(largest != i) {
+      swap(heap[i], heap[largest]);
+      hash_table[heap[i].second].second = largest;
+      hash_table[heap[largest].second].second = i;
+    } else {
+      return;
+    }
+  }
+}
+
 /*
  * Insert an element into the heap, updating indexes that become invalid when
  * the heap is rearranged. Returns the index of the new element in the heap.
@@ -103,19 +115,20 @@ int Quash::push_heap(int value) {
   return i;
 }
 
-void Quash::pop_heap() {
-
-}
-
-bool Quash::contains_hash_table(int value) const {
+int Quash::find_hash_table(int value) const {
   int i = hash(value);
   while(i != hash(value)-1) {
     if(hash_table[i].second == -1) break;
     if(hash_table[i].second != -2 and hash_table[i].first == value)
-      return true;
+      return i;
     if(++i == 43) i = 0;
   }
-  return false;
+  return -1;
+}
+
+
+bool Quash::contains_hash_table(int value) const {
+  return find_hash_table(value) != -1;
 }
 
 /*

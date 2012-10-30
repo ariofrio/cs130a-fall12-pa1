@@ -35,13 +35,14 @@ public:
 private:
   // Heap of (element, hash_table_index)
   vector<pair<int, int> > heap;
+  void percolate_down(int);
   int push_heap(int);
-  void pop_heap();
 
   // Hash table of (element, heap_index)
   // Empty slots have heap_index == -1
   // Deleted slots have heap_index == -2
   vector<pair<int, int> > hash_table;
+  int find_hash_table(int) const;
   bool contains_hash_table(int) const;
   int push_hash_table(int);
 
