@@ -18,4 +18,5 @@ test: all
 clean:
 	rm -f *.o 
 	rm -f prog1
+	rm -f test/*.out.run
 
