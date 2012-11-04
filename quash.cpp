@@ -13,6 +13,7 @@ int main(int argc, char**argv) {
   if(argc > 1) {
     if(strcmp(argv[1], "--verbose") == 0) {
       VERBOSE = true;
+      print_message("verbose mode enabled");
     }
   }
 
@@ -22,7 +23,10 @@ int main(int argc, char**argv) {
     string cmd;
     cin >> cmd;
 
-    if(cmd.compare("insert") == 0) {
+    if(cmd.compare("verbose") == 0) {
+      VERBOSE = true;
+      print_message("verbose mode enabled");
+    } else if(cmd.compare("insert") == 0) {
       int i;
       cin >> i;
       
