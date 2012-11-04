@@ -1,0 +1,11 @@
+verbose
+insert 12
+insert 56
+insert 899
+insert -50
+insert 0
+insert -1
+insert 1
+deleteMax
+print
+

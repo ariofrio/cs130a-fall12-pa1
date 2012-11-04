@@ -1,0 +1,11 @@
+verbose mode enabled
+item 12 successfully inserted
+item 56 successfully inserted
+item 899 successfully inserted
+item -50 successfully inserted
+item 0 successfully inserted
+item -1 successfully inserted
+item 1 successfully inserted
+max item 899 deleted
+0:0:4 1:1:2 2:0:-1 3:0:-1 4:0:-1 5:0:-1 6:0:-1 7:0:-1 8:0:-1 9:0:-1 10:0:-1 11:0:-1 12:12:1 13:56:0 14:0:-1 15:0:-1 16:0:-1 17:0:-1 18:0:-1 19:0:-1 20:0:-1 21:0:-1 22:0:-1 23:0:-1 24:0:-1 25:0:-1 26:0:-1 27:0:-1 28:0:-1 29:0:-1 30:0:-1 31:0:-1 32:0:-1 33:0:-1 34:0:-1 35:0:-1 36:-50:3 37:0:-1 38:0:-1 39:899:-2 40:0:-1 41:0:-1 42:-1:5
+0:56:13 1:12:12 2:1:1 3:-50:36 4:0:0 5:-1:42

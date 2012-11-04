@@ -1,0 +1,31 @@
+verbose
+print
+
+insert 12
+print
+
+insert 56
+print
+
+insert 899
+print
+
+insert -50
+print
+
+insert 0
+print
+
+insert -1 
+print
+
+insert 1 
+print
+
+lookup 12
+lookup 56
+lookup 899
+lookup -50
+lookup 0
+lookup -1
+lookup 1
