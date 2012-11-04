@@ -7,7 +7,8 @@ for i in $TESTDIR/*.in; do
   echo -n $(tput bold)
   printf "%-37s   %s\n" $o "./prog1 < $i"
   echo -n $(tput sgr0)
-  ./prog1 < $i | sdiff -w80 $o - || status=1
+  ./prog1 < $i > $o.run
+  sdiff -w$(tput cols) $o $o.run || status=1
 done
 
 exit $status
