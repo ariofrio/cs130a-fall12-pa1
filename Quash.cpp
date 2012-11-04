@@ -91,9 +91,9 @@ void Quash::percolate_down(int i) {
     if(left <= heap.size() and heap[left] > heap[largest]) largest = left;
     if(right <= heap.size() and heap[right] > heap[largest]) largest = right;
     if(largest != i) {
-      swap(heap[i], heap[largest]);
       hash_table[heap[i].second].second = largest;
       hash_table[heap[largest].second].second = i;
+      swap(heap[i], heap[largest]);
     } else {
       return;
     }
@@ -110,11 +110,11 @@ int Quash::push_heap(int value) {
   heap.push_back(make_pair(value, -1));
   int i;
   for(i = heap.size()-1; heap[i].first > heap[(i-1)/2].first; i = (i-1)/2) {
-    swap(heap[i], heap[(i-1)/2]);
     if(heap[i].second != -1)
       hash_table[heap[i].second].second = (i-1)/2;
     if(heap[(i-1)/2].second != -1)
       hash_table[heap[(i-1)/2].second].second = i;
+    swap(heap[i], heap[(i-1)/2]);
   }
   return i;
 }
