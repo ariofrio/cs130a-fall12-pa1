@@ -14,3 +14,7 @@ See the programming assignment on the [CS 130A course website][pdf].
 
     make
     ./quash
+
+## Testing
+
+    make test
